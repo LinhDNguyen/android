@@ -77,6 +77,10 @@ public class MyServer extends Activity {
                st = input.readLine();
                mClientMsg = "\"" + st + "\"";
                myUpdateHandler.sendMessage(m);
+               if(st.equalsIgnoreCase("exit")){
+                  s.close();
+                  s = null;
+               }
             } catch (IOException e) {
                e.printStackTrace();
             }
